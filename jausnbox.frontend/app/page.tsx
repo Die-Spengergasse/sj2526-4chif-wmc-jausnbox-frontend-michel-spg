@@ -28,7 +28,6 @@ export default function Home() {
           Rezepte entdecken
         </span>
 
-        {/* Pfeil ist IMMER sichtbar, bewegt sich beim Hover leicht nach rechts */}
         <HiArrowRight
           className="relative z-10 h-5 w-5"
           aria-hidden="true"
