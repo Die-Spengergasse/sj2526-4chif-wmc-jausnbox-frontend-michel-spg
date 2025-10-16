@@ -30,7 +30,7 @@ export default function Home() {
 
         {/* Pfeil ist IMMER sichtbar, bewegt sich beim Hover leicht nach rechts */}
         <HiArrowRight
-          className="relative z-10 h-5 w-5 translate-x-0 transition-transform duration-300 group-hover:translate-x-1"
+          className="relative z-10 h-5 w-5"
           aria-hidden="true"
         />
       </Link>
