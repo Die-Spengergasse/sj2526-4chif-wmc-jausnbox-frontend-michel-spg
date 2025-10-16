@@ -18,14 +18,12 @@ export default function Home() {
       </div>
 
       <Link
-        href="/recipes" // Ersetzen Sie dies durch Ihren tatsächlichen Link
+        href="/recipes"
         className="group relative inline-flex items-center justify-center rounded-lg bg-emerald-100 text-emerald-900 px-6 py-3 text-lg font-medium transition-colors duration-300 overflow-hidden active:scale-[0.98]
-                    dark:bg-emerald-900 dark:text-emerald-100 dark:hover:bg-emerald-800" // Zusätzliche Styling-Klassen für den Button selbst
+                    dark:bg-emerald-900 dark:text-emerald-100 dark:hover:bg-emerald-800"
       >
-        {/* Sanfter Leuchteffekt beim Hover (wie zuvor) */}
         <span className="absolute inset-0 rounded-lg bg-white opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-10" />
 
-        {/* Text, der über dem Hintergrund liegt und zentriert ist */}
         <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2">
           Rezepte entdecken
         </span>
