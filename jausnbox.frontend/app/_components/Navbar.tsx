@@ -8,6 +8,7 @@ export default function Navbar() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/recipes", label: "Rezepte" },
+    { href: "/recipes/add", label: "Rezept hinzufügen" },
   ];
 
   return (
