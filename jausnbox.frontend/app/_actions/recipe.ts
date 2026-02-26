@@ -1,7 +1,6 @@
 'use server';
 import { revalidatePath } from 'next/cache'; 
 import { recipeSchema, formatZodErrors } from '../_lib/validation';
-import { redirect } from "next/navigation";
 
 export async function createRecipe(formData: FormData) {
   // Validierung der Formulardaten mit Zod 
@@ -67,7 +66,6 @@ export async function deleteRecipe(id: string) {
     }
 
     revalidatePath('/recipes');
-    redirect("/recipes");
   } catch (error) {
     throw error;
   }

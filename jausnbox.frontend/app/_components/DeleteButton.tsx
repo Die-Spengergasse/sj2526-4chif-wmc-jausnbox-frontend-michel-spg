@@ -1,16 +1,19 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { deleteRecipe } from "../_actions/recipe";
 
 export function DeleteButton({ id }: { id: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const handleDelete = () => {
     startTransition(async () => {
       try {
         await deleteRecipe(id);
+        router.push("/recipes");
       } catch (error) {
         alert("Fehler beim Löschen!");
         setIsOpen(false);
