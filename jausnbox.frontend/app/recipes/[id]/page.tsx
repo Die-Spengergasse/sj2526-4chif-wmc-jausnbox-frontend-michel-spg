@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Recipe } from "../../_types/Recipe";
+import { DeleteButton } from "@/app/_components/DeleteButton";
 
 // kann auch ausgelagert werden in eine API Datei in einem Ordner lib oder service
 async function getRecipe(id: string): Promise<Recipe | null> {
@@ -61,11 +62,16 @@ export default async function RecipeDetailPage({
         className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-8
                       dark:bg-gray-800 dark:border-gray-700"
       >
-        {/* Title */}
-        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        {/* Header Bereich mit Titel und Lösch-Button */}
+        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between border-b pb-4 dark:border-gray-700">
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl dark:text-white">
             {recipe.title}
           </h1>
+          
+          <div className="flex items-center gap-2">
+            {/* TODO: Edit-Button */}
+            <DeleteButton id={id} />
+          </div>
         </div>
 
         {/* Grid */}
