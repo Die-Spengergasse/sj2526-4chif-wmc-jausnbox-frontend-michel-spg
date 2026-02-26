@@ -29,15 +29,14 @@ export default function RecipeGrid({ recipes }: RecipeListProps) {
             </p>
           </div>
           <div className="mt-4">
-            <Link href={`/recipes/${recipe.id}`}>
-              <button
-                className="w-full px-4 py-2 bg-emerald-100 text-emerald-900 rounded-lg 
-                                shadow hover:bg-emerald-200 transition
-                                dark:bg-gray-900 dark:text-emerald-400 
-                                dark:hover:bg-gray-700 dark:border-gray-700"
-              >
-                Details
-              </button>
+            <Link
+              href={`/recipes/${recipe.id}`}
+              className="block w-full px-4 py-2 bg-emerald-100 text-emerald-900 rounded-lg 
+             shadow hover:bg-emerald-200 transition text-center
+             dark:bg-gray-900 dark:text-emerald-400 
+             dark:hover:bg-gray-700 dark:border-gray-700"
+            >
+              Details
             </Link>
           </div>
         </div>
