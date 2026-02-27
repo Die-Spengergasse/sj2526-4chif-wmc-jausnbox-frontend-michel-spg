@@ -67,7 +67,7 @@ export default function Recipes() {
               <span>Lade Rezepte...</span>
             </div>
           ) : (
-            `Rezepte: ${recipes ? recipes.length : 0}`
+            `Rezepte: ${recipes ? filteredRecipes.length : 0}`
           )}
         </div>
 
