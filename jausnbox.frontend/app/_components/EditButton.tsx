@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function EditButton({ id }: { id: string }) {
+export default function EditButton({ id }: { id: number }) {
   return (
     <Link
       href={`/recipes/${id}/edit`}

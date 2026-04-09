@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { deleteRecipe } from "../_actions/recipe";
 
-export function DeleteButton({ id }: { id: string }) {
+export default function DeleteButton({ id }: { id: number }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();

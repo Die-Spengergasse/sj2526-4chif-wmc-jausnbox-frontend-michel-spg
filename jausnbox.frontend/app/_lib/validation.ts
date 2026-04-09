@@ -32,8 +32,44 @@ export const recipeSchema = z.object({
     .min(1, 'Mindestens eine Zutat erforderlich'),
 });
 
+// Registrierung
+export const registerSchema = z
+  .object({
+    name: z
+      .string()
+      .min(2, "Name muss mindestens 2 Zeichen haben")
+      .max(50, "Name darf maximal 50 Zeichen haben")
+      .optional()
+      .or(z.literal("")),
+    email: z
+      .email("Ungültige Email-Adresse"),
+    password: z
+      .string()
+      .min(6, "Passwort muss mindestens 6 Zeichen haben")
+      .max(100, "Passwort darf maximal 100 Zeichen haben"),
+    passwordConfirm: z
+      .string()
+      .min(1, "Passwort-Bestätigung ist erforderlich"),
+  })
+  .refine((data) => data.password === data.passwordConfirm, {
+    message: "Passwörter stimmen nicht überein",
+    path: ["passwordConfirm"],
+  });
+
+// Login
+export const loginSchema = z.object({
+  email: z
+    .email("Ungültige Email-Adresse"),
+  password: z
+    .string()
+    .min(1, "Passwort ist erforderlich"),
+});
+
+
 // TypeScript-Type automatisch aus dem Schema ableiten
 export type RecipeFormData = z.infer<typeof recipeSchema>;
+export type RegisterFormData = z.infer<typeof registerSchema>;
+export type LoginFormData = z.infer<typeof loginSchema>;
 
 // Hilfsfunktion: Zod-Errors in ein feldbasiertes Objekt umwandeln
 export type FieldErrors = Partial<Record<string, string>>;
